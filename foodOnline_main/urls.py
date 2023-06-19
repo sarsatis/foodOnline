@@ -22,5 +22,5 @@ from foodOnline_main import view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', view.home),
+    path('', view.home, name='home'),
 ]

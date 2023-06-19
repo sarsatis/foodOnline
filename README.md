@@ -30,25 +30,40 @@
 > e.g django-admin startproject foodOnline_main .
 ```
 
-
 ## To run the django code
 ```python
 > python3 manage.py runserver
 ```
-## To create django app
-```python
-> python3 manage.py startapp employees
 
-> python manage.py migrate
-```
 ## To access the admin console
 ```python
 > localhost:8080/admin
 
 > For username and password run below command
-
+> python manage.py migrate
 > python3 manage.py createsuperuser
+
+username: djangoadmin
+email: djangoadmin@gmail.com
+pass: Asgi!123
 ```
+
+## To link it to templates folder.
+
+1. Create a templates folder and add html files.
+2. In setting.py inside TEMPLATES --> DIRS --> 'templates' folder name which is created
+3. Update the urls.py to add home url which links to a method in view
+4. Inside this view create a method named in urls.py and add a render function pointing to home.html inside templates folder
+
+
+
+
+## To create django app
+```python
+> python3 manage.py startapp employees
+
+```
+
 ## After creating the model objects and adding it into setting.py run the below command to migrate models to tables
 ```python
 > python3 manage.py makemigrations (This will create a sql file in migrations folder)
