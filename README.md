@@ -93,7 +93,7 @@ pass: Asgi!123
            'ENGINE': 'django.db.backends.postgresql',
            'NAME': 'foodOnline_db',
            'USER': 'postgres',
-           'PASSWORD': '',
+           'PASSWORD': config('DB_PASSWORD'), # This will come from .env refer python decouple section in this readme
            'HOST': 'localhost'
 
        }
