@@ -82,6 +82,44 @@ pass: Asgi!123
    ```
 5. python manage.py collectstatic (to collect static files outside of folder this is used in production didnt understand properly)
 
+## To Setup a DB
+
+1. Install a postgress sql and open pgadmin
+2. Create a db inside postgress sql with name foodOnline_db
+3. Inside Settings.py go to database section and add the following
+   ```python
+   DATABASES = {
+       'default': {
+           'ENGINE': 'django.db.backends.postgresql',
+           'NAME': 'foodOnline_db',
+           'USER': 'postgres',
+           'PASSWORD': '',
+           'HOST': 'localhost'
+
+       }
+   }
+   ```
+4. Install psycopg2 library to work with python
+   ```python
+   pip3 install psycopg2
+   ```
+> Since we moved from sql3 db to postgres sql we have to run the below commands again
+1. python manage.py migrate
+2. python3 manage.py createsuperuser
+3. Inside auth_user table inside postgres sql you can check new super user is created
+
+## Since we have sensitive information like password to connect to sql db we cannot push it to git So python provides a package called decouple
+1. pip install python-decouple
+2. from decouple import config
+3. Sample to retrieve the configurations from .env file
+```python
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+EMAIL_HOST = config('EMAIL_HOST', default='localhost')
+EMAIL_PORT = config('EMAIL_PORT', default=25, cast=int)
+```
+
+
 ## To create django app
 
 ```python
