@@ -49,13 +49,13 @@ pass: Asgi!123
 ```
 
 ## To link it to templates folder.
-
 1. Create a templates folder and add html files.
 2. In setting.py inside TEMPLATES --> DIRS --> 'templates' folder name which is created
 3. Update the urls.py to add home url which links to a method in view
 4. Inside this view create a method named in urls.py and add a render function pointing to home.html inside templates folder
 
 
+## Static File Linking
 
 
 ## To create django app
